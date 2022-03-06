@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
-import { sliderData } from '../model/data';
+import { sliderData, freeGames, paidGames } from '../model/data';
 import Feather from 'react-native-vector-icons/Feather';
 import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
 import CustomSwitch from '../components/CustomSwitch';
 import ListItem from '../components/ListItem';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
   const [gamesTab, setGamesTab] = useState(1);
 
   const renderBanner = ({ item, index }) => {
@@ -40,11 +40,13 @@ export const HomeScreen = () => {
           <Text style={{ fontSize: 16, fontFamily: 'Roboto-Medium' }}>
             Hello John Doe
           </Text>
-          <ImageBackground
-            source={require('../assets/images/user-profile.jpg')}
-            style={{ width: 35, height: 35 }}
-            imageStyle={{ borderRadius: 25 }}
-          />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <ImageBackground
+              source={require('../assets/images/user-profile.jpg')}
+              style={{ width: 35, height: 35 }}
+              imageStyle={{ borderRadius: 25 }}
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -95,8 +97,27 @@ export const HomeScreen = () => {
           />
         </View>
 
-        {gamesTab == 1 && <ListItem />}
-        {gamesTab == 2 && <Text>Paid Games</Text>}
+        {gamesTab == 1 &&
+          freeGames.map(item => (
+            <ListItem
+              key={item.id}
+              imageSource={item.poster}
+              title={item.title}
+              subTitle={item.subtitle}
+              isFree={item.isFree}
+            />
+          ))}
+        {gamesTab == 2 &&
+          paidGames.map(item => (
+            <ListItem
+              key={item.id}
+              imageSource={item.poster}
+              title={item.title}
+              subTitle={item.subtitle}
+              isFree={item.isFree}
+              price={item.price}
+            />
+          ))}
       </ScrollView>
     </SafeAreaView>
   );
