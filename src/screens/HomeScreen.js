@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
-import { sliderData, freeGames, paidGames } from '../model/data';
+import { sliderData, freeGames, paidGames } from '../../model/data';
 import Feather from 'react-native-vector-icons/Feather';
 import BannerSlider from '../components/BannerSlider';
-import { windowWidth } from '../utils/Dimensions';
+import { windowWidth } from '../../utils/Dimensions';
 import CustomSwitch from '../components/CustomSwitch';
 import ListItem from '../components/ListItem';
 
