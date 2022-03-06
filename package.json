@@ -14,7 +14,8 @@
     "clean-android": "rm -rf android/.gradle android/.idea android/build android/app/build",
     "clean-ios": "cd ios && pod deintegrate && cd .. && pod cache clean --all && rm -rf ios/build ios/Podfile.lock",
     "clean-node": "rm -rf node_modules npm.lock",
-    "clean-npm": "npm cache clean --force"
+    "clean-npm": "npm cache clean --force",
+    "clean-hard": "watchman watch-del-all && killall -9 node && rm -rf yarn.lock package-lock.json node_modules ios/Pods ios/Podfile.lock android/app/build && npm install && cd ios && pod update && cd .. && npm start -- --reset-cache"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.0.9",

@@ -8,9 +8,9 @@ const Drawer = createDrawerNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen component={HomeScreen} name="Home" />
-    </Stack.Navigator>
+    <Drawer.Navigator>
+      <Drawer.Screen component={HomeScreen} name="Home" />
+    </Drawer.Navigator>
   );
 };
 

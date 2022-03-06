@@ -40,7 +40,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={{ fontSize: 16, fontFamily: 'Roboto-Medium' }}>
             Hello John Doe
           </Text>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack('')}>
             <ImageBackground
               source={require('../../assets/images/user-profile.jpg')}
               style={{ width: 35, height: 35 }}
