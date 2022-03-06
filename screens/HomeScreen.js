@@ -15,6 +15,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
 import CustomSwitch from '../components/CustomSwitch';
+import ListItem from '../components/ListItem';
 
 export const HomeScreen = () => {
   const [gamesTab, setGamesTab] = useState(1);
@@ -94,7 +95,7 @@ export const HomeScreen = () => {
           />
         </View>
 
-        {gamesTab == 1 && <Text>Free Games</Text>}
+        {gamesTab == 1 && <ListItem />}
         {gamesTab == 2 && <Text>Paid Games</Text>}
       </ScrollView>
     </SafeAreaView>
