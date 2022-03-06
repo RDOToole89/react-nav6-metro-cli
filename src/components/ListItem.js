@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { windowWidth } from '../utils/Dimensions';
+import { windowWidth } from '../../utils/Dimensions';
 import React from 'react';
 
 const ListItem = ({ imageSource, title, subTitle, isFree, price }) => {

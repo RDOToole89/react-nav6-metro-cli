@@ -17,7 +17,7 @@ import { windowWidth } from '../../utils/Dimensions';
 import CustomSwitch from '../components/CustomSwitch';
 import ListItem from '../components/ListItem';
 
-export const HomeScreen = ({ navigation }) => {
+export default function HomeScreen({ navigation }) {
   const [gamesTab, setGamesTab] = useState(1);
 
   const renderBanner = ({ item, index }) => {
@@ -42,7 +42,7 @@ export const HomeScreen = ({ navigation }) => {
           </Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <ImageBackground
-              source={require('../assets/images/user-profile.jpg')}
+              source={require('../../assets/images/user-profile.jpg')}
               style={{ width: 35, height: 35 }}
               imageStyle={{ borderRadius: 25 }}
             />
@@ -121,4 +121,4 @@ export const HomeScreen = ({ navigation }) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
