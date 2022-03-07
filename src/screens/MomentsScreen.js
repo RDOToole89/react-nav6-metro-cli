@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const MomentScreen = () => {
+const MomentsScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login Screen</Text>
+      <Text>Moment Screen</Text>
     </View>
   );
 };
 
-export default MomentScreen;
+export default MomentsScreen;
