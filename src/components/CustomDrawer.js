@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, ImageBackground, Image } from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -51,8 +57,34 @@ const CustomDrawer = props => {
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
-      <View>
-        <Text>Our Custom Text</Text>
+      <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
+        <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 15 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <IonIcons name="share-social-outline" size={22} />
+            <Text
+              style={{
+                fontSize: 15,
+                fontFamily: 'Roboto-Medium',
+                marginLeft: 5,
+              }}>
+              Tell a Friend
+            </Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 15 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <IonIcons name="exit-outline" size={22} />
+            <Text
+              style={{
+                fontSize: 15,
+                fontFamily: 'Roboto-Medium',
+                marginLeft: 5,
+              }}>
+              Sign Out
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
