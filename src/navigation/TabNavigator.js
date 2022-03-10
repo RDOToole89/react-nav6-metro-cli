@@ -16,9 +16,19 @@ const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="GameDetails" component={GameDetailsScreen} />
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="GameDetails"
+        component={GameDetailsScreen}
+        options={({ route }) => ({
+          title: route.params?.title,
+        })}
+      />
     </Stack.Navigator>
   );
 };
