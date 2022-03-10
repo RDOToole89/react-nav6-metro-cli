@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -46,11 +49,15 @@ const TabNavigator = () => {
       <Tab.Screen
         name="HomeTab"
         component={HomeStack}
-        options={{
+        options={({ route }) => ({
+          tabBarStyle: {
+            display: getTabBarVisibility(route),
+            backgroundColor: '#Ad40Af',
+          },
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),
-        }}
+        })}
       />
       <Tab.Screen
         name="Cart"
@@ -74,6 +81,16 @@ const TabNavigator = () => {
       />
     </Tab.Navigator>
   );
+};
+
+const getTabBarVisibility = route => {
+  console.log(route);
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+  console.log(routeName);
+
+  if (routeName === 'GameDetails') return 'none';
+
+  return 'flex';
 };
 
 export default TabNavigator;
