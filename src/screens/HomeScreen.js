@@ -105,6 +105,7 @@ export default function HomeScreen({ navigation }) {
               title={item.title}
               subTitle={item.subtitle}
               isFree={item.isFree}
+              onPress={() => navigation.navigate('GameDetails')}
             />
           ))}
         {gamesTab == 2 &&
@@ -116,6 +117,7 @@ export default function HomeScreen({ navigation }) {
               subTitle={item.subtitle}
               isFree={item.isFree}
               price={item.price}
+              onPress={() => navigation.navigate('GameDetails')}
             />
           ))}
       </ScrollView>
