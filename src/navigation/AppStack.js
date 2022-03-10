@@ -7,6 +7,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import CustomDrawer from '../components/CustomDrawer';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import TabNavigator from './TabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,7 +16,7 @@ const AppStack = () => {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         drawerActiveBackgroundColor: '#aa18ea',
         drawerActiveTintColor: '#fff',
         drawerInactiveTintColor: '#333',
@@ -26,7 +27,7 @@ const AppStack = () => {
         },
       }}>
       <Drawer.Screen
-        component={HomeScreen}
+        component={TabNavigator}
         name="Home"
         options={{
           drawerIcon: ({ color }) => (
